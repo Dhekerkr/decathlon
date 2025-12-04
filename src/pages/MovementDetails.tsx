@@ -1,11 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import {
-  ArrowLeft,
-  CheckCircle,
-  AlertTriangle,
-  ShoppingBag,
-} from 'lucide-react';
+import { ArrowLeft, CheckCircle, AlertTriangle, ShoppingBag,} from 'lucide-react';
 import ProductCard from '../components/ProductCard';
 import { SportProfile } from '../data/questions';
 import { movements, MovementData } from '../data/movements';
