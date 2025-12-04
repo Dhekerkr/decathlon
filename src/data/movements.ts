@@ -47,7 +47,7 @@ export const movements: MovementData[] = [
       "Poids sur les talons, pas sur les orteils",
       "Respiration : inspire en descendant, expire en remontant",
     ],
-    imageUrl: "https://images.pexels.com/photos/4162449/pexels-photo-4162449.jpeg",
+    imageUrl: "https://osaforme.fr/wp-content/uploads/2023/02/position-squat.jpg",
   },
   {
     id: "pushup",
@@ -121,7 +121,7 @@ export const movements: MovementData[] = [
       "Tête dans le prolongement de la colonne (regarde le sol)",
       "Respiration continue et régulière",
     ],
-    imageUrl: "https://images.pexels.com/photos/4162451/pexels-photo-4162451.jpeg",
+    imageUrl: "https://bodyhit.fr/wp-content/uploads/2018/04/Comment_bien_faire_la_planche.jpg",
   },
   {
     id: "yoga",
@@ -158,6 +158,6 @@ export const movements: MovementData[] = [
       "Hanches hautes, poids réparti entre mains et pieds",
       "Respiration profonde et calme",
     ],
-    imageUrl: "https://images.pexels.com/photos/3822167/pexels-photo-3822167.jpeg",
+    imageUrl: "https://namaste.yoga/wp-content/uploads/2019/12/chien-tete-en-bas-1460x800.jpg",
   },
 ];

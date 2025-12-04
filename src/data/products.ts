@@ -12,7 +12,7 @@ export const products: Product[] = [
     name: "Tapis de yoga antidérapant",
     description:
       "Tapis confortable et antidérapant pour toutes vos séances de yoga et d'étirements.",
-    url: "https://www.decathlon.fr/browse/c0-tous-les-sports/c1-yoga-pilates/_/N-12fdw5",
+    url: "https://www.decathlon.fr/search?Ntt=Tapis+de+yoga+antid%C3%A9rapant",
     movementIds: ["yoga", "plank"],
   },
   {
@@ -20,7 +20,7 @@ export const products: Product[] = [
     name: "Bandes de résistance élastiques",
     description:
       "Set de bandes élastiques pour progresser en douceur et renforcer tous les groupes musculaires.",
-    url: "https://www.decathlon.fr/browse/c0-tous-les-sports/c1-musculation-cross-training/_/N-1bx3hm1",
+    url: "https://www.decathlon.fr/search?Ntt=Bandes+de+r%C3%A9sistance+%C3%A9lastiques",
     movementIds: ["squat", "pushup"],
   },
   {
@@ -28,7 +28,7 @@ export const products: Product[] = [
     name: "Paire d'haltères ajustables",
     description:
       "Haltères modulables pour ajouter de la charge progressive à vos exercices.",
-    url: "https://www.decathlon.fr/browse/c0-tous-les-sports/c1-musculation-cross-training/c2-halteres-poids/_/N-12zrhzb",
+    url: "https://www.decathlon.fr/search?Ntt=Paire+d%27halt%C3%A8res+ajustables",
     movementIds: ["squat"],
   },
   {
@@ -36,7 +36,7 @@ export const products: Product[] = [
     name: "Poignées de pompes",
     description:
       "Poignées ergonomiques pour augmenter l'amplitude et protéger vos poignets.",
-    url: "https://www.decathlon.fr/browse/c0-tous-les-sports/c1-musculation-cross-training/_/N-1bx3hm1",
+    url: "https://www.decathlon.fr/search?Ntt=Poign%C3%A9es+de+pompes",
     movementIds: ["pushup"],
   },
   {
@@ -44,7 +44,7 @@ export const products: Product[] = [
     name: "T-shirt technique respirant",
     description:
       "Vêtement léger et respirant pour tous types d'entraînements.",
-    url: "https://www.decathlon.fr/browse/c0-tous-les-sports/c1-vetements-de-sport/_/N-wbq75h",
+    url: "https://www.decathlon.fr/search?Ntt=T-shirt+technique+respirant",
     movementIds: ["squat", "pushup", "plank", "yoga"],
   },
   {
@@ -52,7 +52,7 @@ export const products: Product[] = [
     name: "Chaussures de training",
     description:
       "Chaussures stables et confortables pour vos entraînements de renforcement.",
-    url: "https://www.decathlon.fr/browse/c0-tous-les-sports/c1-chaussures-de-sport/_/N-12a62oi",
+    url: "https://www.decathlon.fr/search?Ntt=Chaussures+de+training",
     movementIds: ["squat", "pushup", "plank"],
   },
   {
@@ -60,7 +60,7 @@ export const products: Product[] = [
     name: "Rouleau de massage (foam roller)",
     description:
       "Rouleau pour auto-massage et récupération musculaire après l'effort.",
-    url: "https://www.decathlon.fr/browse/c0-tous-les-sports/c1-yoga-pilates/_/N-12fdw5",
+    url: "https://www.decathlon.fr/search?Ntt=Rouleau+de+massage+%28foam+roller%29",
     movementIds: ["squat", "pushup", "plank", "yoga"],
   },
   {
@@ -68,7 +68,7 @@ export const products: Product[] = [
     name: "Sangle de yoga",
     description:
       "Accessoire pratique pour améliorer votre souplesse et maintenir certaines postures.",
-    url: "https://www.decathlon.fr/browse/c0-tous-les-sports/c1-yoga-pilates/_/N-12fdw5",
+    url: "https://www.decathlon.fr/search?Ntt=Sangle+de+yoga",
     movementIds: ["yoga"],
   },
 ];
