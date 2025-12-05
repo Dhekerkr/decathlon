@@ -9,7 +9,14 @@ export type MovementData = {
   instructions: MovementInstructionByLevel;
   checklist: string[];
   imageUrl: string;
+
+  recommendedFor: {
+    goals: string[];
+    sports: string[];
+    avoidPainZones: string[];
+  };
 };
+
 
 export const movements: MovementData[] = [
   {
@@ -48,6 +55,11 @@ export const movements: MovementData[] = [
       "Respiration : inspire en descendant, expire en remontant",
     ],
     imageUrl: "https://osaforme.fr/wp-content/uploads/2023/02/position-squat.jpg",
+    recommendedFor: {
+      goals: ["Renforcement", "Perte de poids"],
+      sports: ["Musculation", "Course à pied"],
+      avoidPainZones: ["Genoux"],
+    },
   },
   {
     id: "pushup",
@@ -85,6 +97,11 @@ export const movements: MovementData[] = [
       "Respiration : inspire en descendant, expire en poussant",
     ],
     imageUrl: "https://images.pexels.com/photos/4162491/pexels-photo-4162491.jpeg",
+    recommendedFor: {
+      goals: ["Renforcement"],
+      sports: ["Musculation"],
+      avoidPainZones: ["Épaules"],
+    },
   },
   {
     id: "plank",
@@ -122,6 +139,11 @@ export const movements: MovementData[] = [
       "Respiration continue et régulière",
     ],
     imageUrl: "https://bodyhit.fr/wp-content/uploads/2018/04/Comment_bien_faire_la_planche.jpg",
+    recommendedFor: {
+      goals: ["Mobilité", "Détente"],
+      sports: ["Yoga", "Course à pied"],
+      avoidPainZones: ["Épaules"],
+    },
   },
   {
     id: "yoga",
@@ -159,5 +181,83 @@ export const movements: MovementData[] = [
       "Respiration profonde et calme",
     ],
     imageUrl: "https://namaste.yoga/wp-content/uploads/2019/12/chien-tete-en-bas-1460x800.jpg",
+    recommendedFor: {
+      goals: ["Mobilité", "Détente"],
+      sports: ["Yoga", "Course à pied"],
+      avoidPainZones: ["Épaules"],
+    },
   },
+  {
+  id: "fullbody-stretch",
+  label: "Étirement complet du corps",
+  description:
+    "Séquence d’étirements doux permettant d’améliorer la mobilité générale et la récupération après l’effort.",
+  instructions: {
+    Débutant: [
+      "Maintiens chaque étirement pendant 20 à 30 secondes.",
+      "Ne force jamais : reste dans une zone confortable.",
+      "Respire profondément pour détendre les muscles.",
+    ],
+    Intermédiaire: [
+      "Tiens les étirements 30 à 45 secondes.",
+      "Ajoute des mouvements dynamiques contrôlés.",
+      "Alternez tension et relâchement musculaire.",
+    ],
+    Avancé: [
+      "Ajoute des étirements actifs pour augmenter la mobilité.",
+      "Incorpore des positions de yoga comme le guerrier.",
+      "Maintiens les positions jusqu’à 1 minute.",
+    ],
+  },
+  checklist: [
+    "Respiration lente et profonde",
+    "Pas de douleur aiguë",
+    "Posture stable et contrôlée",
+  ],
+  imageUrl: "https://cdn8.futura-sciences.com/a1280/images/etirements-musculaires-vieillissement.png",
+
+  recommendedFor: {
+    goals: ["Renforcement", "Mobilité", "Détente", "Perte de poids"],
+    sports: ["Yoga", "Course à pied", "Musculation", "Autre"],
+    avoidPainZones: [],
+  },
+},
+
+{
+  id: "active-walk",
+  label: "Marche active",
+  description:
+    "Exercice universel faible impact qui améliore la circulation, brûle des calories et renforce la posture.",
+  instructions: {
+    Débutant: [
+      "Marche 10 minutes à rythme modéré.",
+      "Garde un bon alignement du dos.",
+      "Utilise tes bras pour rythmer ta marche.",
+    ],
+    Intermédiaire: [
+      "Marche 20 minutes à rythme soutenu.",
+      "Alterner 1 min rapide / 1 min normale.",
+      "Posture fière : épaules basses, regard loin.",
+    ],
+    Avancé: [
+      "Marche 30 minutes rapide ou en côte.",
+      "Accentue l’impulsion des bras.",
+      "Varie les terrains pour solliciter la stabilité.",
+    ],
+  },
+  checklist: [
+    "Dos droit",
+    "Respiration fluide",
+    "Foulée dynamique mais contrôlée",
+  ],
+  imageUrl: "https://ffepgv.fr/images/demo/18.jpg",
+
+  recommendedFor: {
+    goals: ["Perte de poids", "Mobilité", "Détente"],
+    sports: ["Autre", "Course à pied", "Musculation", "Yoga"],
+    avoidPainZones: [],
+  },
+},
+
+  
 ];

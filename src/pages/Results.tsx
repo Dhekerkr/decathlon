@@ -6,6 +6,39 @@ import MovementCard from '../components/MovementCard';
 import { SportProfile } from '../data/questions';
 import { movements } from '../data/movements';
 
+function filterMovements(profile: SportProfile) {
+  // 1) Filtre principal
+  let filtered = movements.filter((m) => {
+    const okGoal = m.recommendedFor.goals.includes(profile.goal);
+    const okSport = m.recommendedFor.sports.includes(profile.mainSport);
+    const okPain = !m.recommendedFor.avoidPainZones.includes(profile.painZone);
+
+    return okGoal && okSport && okPain;
+  });
+
+  // 2) fallback si aucun mouvement trouvé
+  if (filtered.length === 0) {
+    filtered = movements.filter((m) =>
+      m.recommendedFor.sports.includes(profile.mainSport)
+    );
+  }
+
+  // 3) deuxième fallback
+  if (filtered.length === 0) {
+    filtered = movements.filter((m) =>
+      m.recommendedFor.goals.includes(profile.goal)
+    );
+  }
+
+  // 4) dernier fallback → tout renvoyer
+  if (filtered.length === 0) {
+    return movements;
+  }
+
+  return filtered;
+}
+
+
 export default function Results() {
   const navigate = useNavigate();
   const [profile, setProfile] = useState<SportProfile | null>(null);
@@ -22,16 +55,10 @@ export default function Results() {
       <div className="max-w-2xl mx-auto text-center py-12">
         <div className="bg-amber-50 border border-amber-200 rounded-2xl p-8">
           <AlertTriangle className="w-12 h-12 text-amber-600 mx-auto mb-4" />
-          <h2 className="text-2xl font-bold text-slate-900 mb-3">
-            Aucun profil trouvé
-          </h2>
-          <p className="text-slate-600 mb-6">
-            Vous devez d'abord créer votre profil sportif en répondant au
-            questionnaire.
-          </p>
+          <h2 className="text-2xl font-bold">Aucun profil trouvé</h2>
           <button
             onClick={() => navigate('/qcm')}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
+            className="bg-blue-600 text-white px-6 py-3 rounded-xl mt-4"
           >
             Créer mon profil
           </button>
@@ -40,33 +67,23 @@ export default function Results() {
     );
   }
 
+  const recommendedMovements = filterMovements(profile);
+
   return (
     <div className="space-y-8">
       <ProfileSummary profile={profile} />
 
       <div>
-        <div className="mb-6">
-          <h2 className="text-3xl font-bold text-slate-900 mb-2">
-            Mouvements recommandés
-          </h2>
-          <p className="text-slate-600 text-lg">
-            Sélectionnez un mouvement pour obtenir des instructions
-            personnalisées selon votre profil.
-          </p>
-        </div>
+        <h2 className="text-3xl font-bold mb-2">Mouvements recommandés</h2>
+        <p className="text-slate-600 mb-6">
+          Sélectionnez un mouvement pour obtenir des instructions adaptées.
+        </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {movements.map((movement) => (
+          {recommendedMovements.map((movement) => (
             <MovementCard key={movement.id} movement={movement} />
           ))}
         </div>
-      </div>
-
-      <div className="bg-slate-100 rounded-2xl p-6 border border-slate-200">
-        <p className="text-sm text-slate-600 text-center">
-          Vos données sont stockées localement dans votre navigateur. Aucune
-          information n'est envoyée à un serveur externe.
-        </p>
       </div>
     </div>
   );
