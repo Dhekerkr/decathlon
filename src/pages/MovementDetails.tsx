@@ -64,11 +64,12 @@ const finalProducts =
               <p>
                 <strong>Niveau :</strong> {profile.level}
               </p>
-              {profile.painZone !== "Aucune" && (
+              {profile.painZone.length > 0 && !profile.painZone.includes("Aucune") && (
                 <p>
-                  <strong>Zone sensible :</strong> {profile.painZone}
+                  <strong>Zones sensibles :</strong> {profile.painZone.join(", ")}
                 </p>
               )}
+
             </div>
           )}
         </div>

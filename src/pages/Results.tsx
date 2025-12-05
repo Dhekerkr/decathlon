@@ -7,36 +7,40 @@ import { SportProfile } from '../data/questions';
 import { movements } from '../data/movements';
 
 function filterMovements(profile: SportProfile) {
-  // 1) Filtre principal
+  // 1. Filtre principal
   let filtered = movements.filter((m) => {
     const okGoal = m.recommendedFor.goals.includes(profile.goal);
     const okSport = m.recommendedFor.sports.includes(profile.mainSport);
-    const okPain = !m.recommendedFor.avoidPainZones.includes(profile.painZone);
+
+    const okPain = !profile.painZone.some((p) =>
+      m.recommendedFor.avoidPainZones.includes(p)
+    );
 
     return okGoal && okSport && okPain;
   });
 
-  // 2) fallback si aucun mouvement trouvé
+  // 2. fallback sport
   if (filtered.length === 0) {
     filtered = movements.filter((m) =>
       m.recommendedFor.sports.includes(profile.mainSport)
     );
   }
 
-  // 3) deuxième fallback
+  // 3. fallback objectif
   if (filtered.length === 0) {
     filtered = movements.filter((m) =>
       m.recommendedFor.goals.includes(profile.goal)
     );
   }
 
-  // 4) dernier fallback → tout renvoyer
+  // 4. fallback final
   if (filtered.length === 0) {
     return movements;
   }
 
   return filtered;
 }
+
 
 
 export default function Results() {

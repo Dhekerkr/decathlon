@@ -38,9 +38,10 @@ export type SportProfile = {
   level: "Débutant" | "Intermédiaire" | "Avancé";
   mainSport: string;
   goal: string;
-  painZone: string;
+  painZone: string[]; // MULTIPLE
 };
 
+// ⬅️ IMPORTANT : permettre string OU tableau de string
 export type QCMAnswers = {
-  [key: string]: string;
+  [key: string]: string | string[];
 };
